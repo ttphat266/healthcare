@@ -1,0 +1,20 @@
+PODS:
+  - FSCalendar (2.8.1)
+  - LGSideMenuController (2.1.1)
+
+DEPENDENCIES:
+  - FSCalendar
+  - LGSideMenuController
+
+SPEC REPOS:
+  trunk:
+    - FSCalendar
+    - LGSideMenuController
+
+SPEC CHECKSUMS:
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+
+PODFILE CHECKSUM: 74b47c66b2fb7a0e9ff75e084cde12691ad4f03a
+
+COCOAPODS: 1.9.3

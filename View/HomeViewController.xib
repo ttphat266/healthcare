@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="HealthCare" customModuleProvider="target">
+            <connections>
+                <outlet property="medicalTableView" destination="Kmp-0C-boV" id="Svv-Cs-7ZI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nl-2e-HAo" customClass="FSCalendar">
+                    <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                    <color key="backgroundColor" red="0.22361347079999999" green="0.22338125110000001" blue="0.23137381670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="Tme-S1-Qfj"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2a1-xj-hUt"/>
+                        <outlet property="delegate" destination="-1" id="WNH-OL-DP0"/>
+                    </connections>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-0C-boV">
+                    <rect key="frame" x="0.0" y="344" width="414" height="518"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="hvm-Fg-np0"/>
+                        <outlet property="delegate" destination="-1" id="uZ8-vB-GKe"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="Kmp-0C-boV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CWC-yI-P3e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kmp-0C-boV" secondAttribute="trailing" id="EeP-GQ-GtZ"/>
+                <constraint firstItem="8nl-2e-HAo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gdv-GL-4JX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kmp-0C-boV" secondAttribute="bottom" id="hDB-l8-sYt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8nl-2e-HAo" secondAttribute="trailing" id="rL2-G7-zx5"/>
+                <constraint firstItem="Kmp-0C-boV" firstAttribute="top" secondItem="8nl-2e-HAo" secondAttribute="bottom" id="w7d-6L-kgY"/>
+                <constraint firstItem="8nl-2e-HAo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wLk-YW-VkC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="27.536231884057973" y="81.696428571428569"/>
+        </view>
+    </objects>
+</document>
