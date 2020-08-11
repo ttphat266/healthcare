@@ -9,6 +9,10 @@
 import UIKit
 
 class MedicationsViewController: UIViewController {
+    
+    @IBOutlet weak var medTableView: UITableView!
+    
+    var medicinAray = [String]()
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +25,33 @@ class MedicationsViewController: UIViewController {
 
 extension MedicationsViewController {
         
-    @objc func addMedication() {
-        let addMedlView = AddMedicineViewController()
-        self.navigationController?.pushViewController(addMedlView, animated: true)
-        print("added")
+    @objc func addAction() {
+        let alertController = UIAlertController(title: "Please choose one", message: "", preferredStyle: .actionSheet)
+          
+        let addMedAction = UIAlertAction(title: "Add a medicine", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+              let addMedlView = AddMedicineViewController()
+              self.navigationController?.pushViewController(addMedlView, animated: true)
+              print("added")
+          })
+        let addDoctorAction = UIAlertAction(title: "Add a doctor", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            let addDoctorView = AddDoctorViewController()
+            self.navigationController?.pushViewController(addDoctorView, animated: true)
+            print("added")
+        })
+        let addDependentAction = UIAlertAction(title: "Add a dependent", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            let addDependentView = AddDependentViewController()
+            self.navigationController?.pushViewController(addDependentView, animated: true)
+            print("added")
+        })
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (alert: UIAlertAction!) -> Void in })
+          
+            alertController.addAction(addMedAction)
+            alertController.addAction(addDoctorAction)
+            alertController.addAction(addDependentAction)
+            alertController.addAction(doneAction)
+        
+          self.present(alertController, animated: true, completion: nil)
+
     }
     
     @objc func userInfo() {
@@ -34,7 +61,7 @@ extension MedicationsViewController {
     func addButton() {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add,
                                              target: self,
-                                             action: #selector(addMedication))
+                                             action: #selector(addAction))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
@@ -55,4 +82,15 @@ extension MedicationsViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 37/255, green: 63/255, blue: 90/255, alpha: 100)
         self.navigationController?.navigationBar.barStyle = .black
     }
+}
+
+extension MedicationsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        medicinAray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 }

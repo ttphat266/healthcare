@@ -7,22 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
-enum MedicineLevel: Int {
-    case Hard = 1
-    case Low = 2
-}
-
-class MedicineModel: NSObject {
+class MedicineModel: Object {
     
-    var medicineId = 0
-    var medicineName = ""
-    var medicineUsage = ""
+    @objc dynamic var medId = 0
+    @objc dynamic var medName = ""
+//    @objc dynamic var medUsage = ""
     
-    init(medicineId: Int, medicineName: String, medicineUsage: String) {
-        self.medicineId = medicineId
-        self.medicineName = medicineName
-        self.medicineUsage = medicineUsage
-    }
+    
+//    convenience init(medicineId: Int, medicineName: String, medicineUsage: String) {
+//        self.init()
+//        self.medicineId = medicineId
+//        self.medicineName = medicineName
+//        self.medicineUsage = medicineUsage
+//    }
 }
 

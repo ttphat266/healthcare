@@ -30,10 +30,33 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
         
-    @objc func addMedication() {
-        let addMedlView = AddMedicineViewController()
-        self.navigationController?.pushViewController(addMedlView, animated: true)
-        print("added")
+    @objc func addAction() {
+        let alertController = UIAlertController(title: "Please choose one", message: "", preferredStyle: .actionSheet)
+          
+        let addMedAction = UIAlertAction(title: "Add a medicine", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+              let addMedlView = AddMedicineViewController()
+              self.navigationController?.pushViewController(addMedlView, animated: true)
+              print("added")
+          })
+        let addDoctorAction = UIAlertAction(title: "Add a doctor", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            let addDoctorView = AddDoctorViewController()
+            self.navigationController?.pushViewController(addDoctorView, animated: true)
+            print("added")
+        })
+        let addDependentAction = UIAlertAction(title: "Add a dependent", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            let addDependentView = AddDependentViewController()
+            self.navigationController?.pushViewController(addDependentView, animated: true)
+            print("added")
+        })
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (alert: UIAlertAction!) -> Void in })
+          
+            alertController.addAction(addMedAction)
+            alertController.addAction(addDoctorAction)
+            alertController.addAction(addDependentAction)
+            alertController.addAction(doneAction)
+        
+          self.present(alertController, animated: true, completion: nil)
+
     }
     
     @objc func userInfo() {
@@ -43,7 +66,7 @@ extension HomeViewController {
     func addButton() {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add,
                                              target: self,
-                                             action: #selector(addMedication))
+                                             action: #selector(addAction))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     

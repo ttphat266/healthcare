@@ -7,6 +7,6 @@ target 'HealthCare' do
 
   # Pods for HealthCare
 pod 'FSCalendar'
-pod 'LGSideMenuController'
+pod 'RealmSwift'
 end
 

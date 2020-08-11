@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineViewController" customModule="HealthCare" customModuleProvider="target">
             <connections>
+                <outlet property="medNameTextField" destination="e0l-hT-1Z4" id="5fP-bq-Asz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
