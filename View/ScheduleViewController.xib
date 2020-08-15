@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleViewController" customModule="HealthCare" customModuleProvider="target">
             <connections>
+                <outlet property="timeButton" destination="HP4-gv-t2Y" id="a83-5Y-rZn"/>
+                <outlet property="timeLabel" destination="5uk-wG-S3X" id="J1y-fS-J2j"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,32 +20,71 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aTy-Va-HkF">
-                    <rect key="frame" x="44" y="134" width="326" height="53"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.23929974439999999" green="0.23906749490000001" blue="0.2470601201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Frequency">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET TIME " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-4y-EOE">
+                    <rect key="frame" x="0.0" y="199" width="414" height="25"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="tDc-Pc-hZv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW MANY TIMES A DAY?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxJ-qB-981">
+                    <rect key="frame" x="0.0" y="94" width="414" height="25"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="eEU-N7-k7d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9x-V7-7bX">
+                    <rect key="frame" x="0.0" y="129" width="414" height="50"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="APo-pW-t3M"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cwp-PB-IdS">
-                    <rect key="frame" x="44" y="220" width="326" height="53"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.23929974439999999" green="0.23906749490000001" blue="0.2470601201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Once a Day">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ouO-GW-qQn">
-                    <rect key="frame" x="44" y="314" width="326" height="53"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.23929974439999999" green="0.23906749490000001" blue="0.2470601201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <state key="normal" title="Time">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uk-wG-S3X">
+                    <rect key="frame" x="0.0" y="234" width="414" height="50"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP4-gv-t2Y">
+                    <rect key="frame" x="0.0" y="294" width="414" height="50"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="JGj-5w-kGo"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="XKG-4y-EOE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="41T-Kg-Pl9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5uk-wG-S3X" secondAttribute="trailing" id="4Sa-nU-Ikc"/>
+                <constraint firstItem="HP4-gv-t2Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ad2-IU-cSC"/>
+                <constraint firstItem="5uk-wG-S3X" firstAttribute="top" secondItem="XKG-4y-EOE" secondAttribute="bottom" constant="10" id="BFh-LE-rHm"/>
+                <constraint firstItem="5uk-wG-S3X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bma-L1-pbx"/>
+                <constraint firstItem="pxJ-qB-981" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="G17-jL-d0n"/>
+                <constraint firstItem="XKG-4y-EOE" firstAttribute="top" secondItem="o9x-V7-7bX" secondAttribute="bottom" constant="20" id="Lkv-y4-dsm"/>
+                <constraint firstItem="pxJ-qB-981" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mlp-AR-Nmh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pxJ-qB-981" secondAttribute="trailing" id="Qgj-WD-jwy"/>
+                <constraint firstItem="o9x-V7-7bX" firstAttribute="top" secondItem="pxJ-qB-981" secondAttribute="bottom" constant="10" id="YA1-Rg-d9M"/>
+                <constraint firstItem="5uk-wG-S3X" firstAttribute="height" secondItem="o9x-V7-7bX" secondAttribute="height" id="ZGE-NU-OCE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o9x-V7-7bX" secondAttribute="trailing" id="ctT-xV-PcN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XKG-4y-EOE" secondAttribute="trailing" id="gRe-LV-96g"/>
+                <constraint firstItem="HP4-gv-t2Y" firstAttribute="top" secondItem="5uk-wG-S3X" secondAttribute="bottom" constant="10" id="sMr-oW-cSv"/>
+                <constraint firstItem="o9x-V7-7bX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v4G-ih-UMB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HP4-gv-t2Y" secondAttribute="trailing" id="vve-Ek-zcT"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
         </view>

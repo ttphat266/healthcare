@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddMedicineViewController" customModule="HealthCare" customModuleProvider="target">
             <connections>
-                <outlet property="medNameTextField" destination="e0l-hT-1Z4" id="5fP-bq-Asz"/>
+                <outlet property="medTableView" destination="4TD-Zn-wAB" id="Xfl-d3-Qbw"/>
+                <outlet property="medTextField" destination="e0l-hT-1Z4" id="ClG-ta-kch"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,14 +56,43 @@
                         <constraint firstItem="u6t-ZM-cvO" firstAttribute="centerY" secondItem="hhH-dJ-tST" secondAttribute="centerY" id="oot-EB-zwl"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efL-l7-dO5">
+                    <rect key="frame" x="0.0" y="199.5" width="414" height="60"/>
+                    <color key="backgroundColor" red="0.22361347079999999" green="0.22338125110000001" blue="0.23137381670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="Add">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="addMed" destination="-1" eventType="touchUpInside" id="dFq-fo-6Sv"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4TD-Zn-wAB">
+                    <rect key="frame" x="0.0" y="279.5" width="414" height="582.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DS3-Tt-n6c"/>
+                        <outlet property="delegate" destination="-1" id="FnI-vr-p77"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hhH-dJ-tST" secondAttribute="trailing" id="05w-Co-AOJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="efL-l7-dO5" secondAttribute="trailing" id="3OV-xl-fXj"/>
+                <constraint firstItem="efL-l7-dO5" firstAttribute="height" secondItem="hhH-dJ-tST" secondAttribute="height" id="7xn-E9-5aJ"/>
+                <constraint firstItem="4TD-Zn-wAB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8c6-VW-oHP"/>
                 <constraint firstItem="gvN-Ef-px7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="9EF-a6-GXB"/>
                 <constraint firstItem="hhH-dJ-tST" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AuE-K7-lDS"/>
+                <constraint firstItem="4TD-Zn-wAB" firstAttribute="top" secondItem="efL-l7-dO5" secondAttribute="bottom" constant="20" id="HdQ-zJ-RoQ"/>
                 <constraint firstItem="gvN-Ef-px7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Kcm-Oi-iCM"/>
                 <constraint firstItem="hhH-dJ-tST" firstAttribute="top" secondItem="gvN-Ef-px7" secondAttribute="bottom" constant="20" id="MZe-ff-Bgr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4TD-Zn-wAB" secondAttribute="trailing" id="ZwS-xe-IsU"/>
+                <constraint firstItem="efL-l7-dO5" firstAttribute="top" secondItem="hhH-dJ-tST" secondAttribute="bottom" constant="20" id="jYh-Mt-k2U"/>
+                <constraint firstItem="efL-l7-dO5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="liL-ac-De1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4TD-Zn-wAB" secondAttribute="bottom" id="rcH-56-vTK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>

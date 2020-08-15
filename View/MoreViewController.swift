@@ -34,16 +34,11 @@ extension MoreViewController {
             self.navigationController?.pushViewController(addDoctorView, animated: true)
             print("added")
         })
-        let addDependentAction = UIAlertAction(title: "Add a dependent", style: .default, handler: { (alert: UIAlertAction!) -> Void in
-            let addDependentView = AddDependentViewController()
-            self.navigationController?.pushViewController(addDependentView, animated: true)
-            print("added")
-        })
+        
         let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (alert: UIAlertAction!) -> Void in })
           
             alertController.addAction(addMedAction)
             alertController.addAction(addDoctorAction)
-            alertController.addAction(addDependentAction)
             alertController.addAction(doneAction)
         
           self.present(alertController, animated: true, completion: nil)

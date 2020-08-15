@@ -11,57 +11,68 @@ import RealmSwift
 
 class AddMedicineViewController: UIViewController {
     
-    @IBOutlet weak var medNameTextField: UITextField!
-
-    let realm = try! Realm()
+    var medList: Results<MedicineModel>?
     
+    @IBOutlet weak var medTextField: UITextField!
+    @IBOutlet weak var medTableView: UITableView!
+    @IBAction func addMed() {
+        DatabaseManager.shareInstance.addData(table: medTableView,text: medTextField)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.medTableView.register(UINib(nibName: "MedicineCell", bundle: Bundle.main), forCellReuseIdentifier: "MedCellID")
+        let rightBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButton))
+               self.navigationItem.rightBarButtonItem = rightBarButton
+               
+        medList = DatabaseManager.shareInstance.database.objects(MedicineModel.self)
         
-        render()
-        saveMed()
+        hideKeyboardWhenTappedAround()
+
     }
-    
-    func render() {
-        let med = realm.objects(MedicineModel.self)
-        for medicine in med {
-            
-            let medicineName = medicine.medName
-            let medicineId = medicine.medId
-            
-            
-            print("\(medicineId) \(medicineName)")
-        }
-    }
-    
-    
 }
 
 extension AddMedicineViewController {
     
-    @objc func saveMed() {
-       let medicine = MedicineModel()
-       medicine.medId = 1
-       medicine.medName = "Panadol"
-       
-       try! realm.write {
-           realm.add(medicine)
-       }
-       print(Realm.Configuration.defaultConfiguration.fileURL!)
-       
-       let medResult = realm.objects(MedicineModel.self)
-        
-       print(medResult)
-    }
-
-    func nextButton() {
-        let rightBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(saveMed))
-        self.navigationItem.rightBarButtonItem = rightBarButton
-         
+    @objc func nextButton() {
         let scheduleVC = ScheduleViewController()
         self.navigationController?.pushViewController(scheduleVC, animated: false)
     }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
+
+extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        medList!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = medTableView.dequeueReusableCell(withIdentifier: "MedCellID", for: indexPath) as! MedicineCell
+        cell.config(model: (self.medList?[indexPath.row])!)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            if let medItem = medList?[indexPath.row] {
+                try! DatabaseManager.shareInstance.database.write {
+                    DatabaseManager.shareInstance.database.delete(medItem)
+                }
+                medTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            }
+        }
+    }
+    
+}
 

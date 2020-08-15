@@ -11,16 +11,7 @@ import RealmSwift
 
 class MedicineModel: Object {
     
-    @objc dynamic var medId = 0
-    @objc dynamic var medName = ""
-//    @objc dynamic var medUsage = ""
-    
-    
-//    convenience init(medicineId: Int, medicineName: String, medicineUsage: String) {
-//        self.init()
-//        self.medicineId = medicineId
-//        self.medicineName = medicineName
-//        self.medicineUsage = medicineUsage
-//    }
+    @objc dynamic var medText = ""
+
 }
 

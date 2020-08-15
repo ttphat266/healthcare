@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicationsViewController" customModule="HealthCare" customModuleProvider="target">
             <connections>
-                <outlet property="medTableView" destination="dLa-aG-k3H" id="iY6-LS-BY0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +21,6 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-aG-k3H">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="CRh-4j-Leq"/>
-                        <outlet property="delegate" destination="-1" id="TWb-Ol-jig"/>
-                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -36,7 +31,7 @@
                 <constraint firstItem="dLa-aG-k3H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Saz-7D-pDP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="136" y="137"/>
+            <point key="canvasLocation" x="-554" y="-40"/>
         </view>
     </objects>
 </document>

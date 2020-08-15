@@ -13,14 +13,10 @@ class HomeViewController: UIViewController {
      
     fileprivate weak var calendar: FSCalendar!
     
-    @IBOutlet weak var medicalTableView: UITableView!
-    
     var medications: [MedicineModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.medicalTableView.register(UINib(nibName: "MedicineCell", bundle: .main), forCellReuseIdentifier: "MedCell")
         
         addButton()
         userButton()
@@ -38,21 +34,16 @@ extension HomeViewController {
               self.navigationController?.pushViewController(addMedlView, animated: true)
               print("added")
           })
+        
         let addDoctorAction = UIAlertAction(title: "Add a doctor", style: .default, handler: { (alert: UIAlertAction!) -> Void in
             let addDoctorView = AddDoctorViewController()
             self.navigationController?.pushViewController(addDoctorView, animated: true)
             print("added")
         })
-        let addDependentAction = UIAlertAction(title: "Add a dependent", style: .default, handler: { (alert: UIAlertAction!) -> Void in
-            let addDependentView = AddDependentViewController()
-            self.navigationController?.pushViewController(addDependentView, animated: true)
-            print("added")
-        })
+        
         let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (alert: UIAlertAction!) -> Void in })
-          
             alertController.addAction(addMedAction)
             alertController.addAction(addDoctorAction)
-            alertController.addAction(addDependentAction)
             alertController.addAction(doneAction)
         
           self.present(alertController, animated: true, completion: nil)
@@ -88,18 +79,4 @@ extension HomeViewController {
         self.navigationController?.navigationBar.barStyle = .black
     }
 }
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medications.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let medCell = tableView.dequeueReusableCell(withIdentifier: "MedCell", for: indexPath) as! MedicineCell
-        return medCell
-    }
-}
-
-
 
