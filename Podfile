@@ -8,5 +8,7 @@ target 'HealthCare' do
   # Pods for HealthCare
 pod 'FSCalendar'
 pod 'RealmSwift'
+pod 'SideMenu'
 end
 
+ 

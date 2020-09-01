@@ -11,13 +11,25 @@ import RealmSwift
 
 class AddMedicineViewController: UIViewController {
     
-    var medList: Results<MedicineModel>?
+    var medList: [String] = []
     
     @IBOutlet weak var medTextField: UITextField!
     @IBOutlet weak var medTableView: UITableView!
-    @IBAction func addMed() {
-        DatabaseManager.shareInstance.addData(table: medTableView,text: medTextField)
+    @IBAction func addMed(_ sender: UIButton) {
+        let medText = medTextField.text!
+        if medText.isEmpty == false {
+            medList.append(medText)
+        }
+        medTextField.text = nil
+        print()
+        
+        medTableView.reloadData()
     }
+        
+        
+    
+//        DatabaseManager.shareInstance.addData(table: medTableView,text: medTextField)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +37,11 @@ class AddMedicineViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButton))
                self.navigationItem.rightBarButtonItem = rightBarButton
                
-        medList = DatabaseManager.shareInstance.database.objects(MedicineModel.self)
+//        medList = DatabaseManager.shareInstance.database.objects(MedicineModel.self)
         
         hideKeyboardWhenTappedAround()
-
     }
+    
 }
 
 extension AddMedicineViewController {
@@ -52,27 +64,28 @@ extension AddMedicineViewController {
 
 
 extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        medList!.count
+        medList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medTableView.dequeueReusableCell(withIdentifier: "MedCellID", for: indexPath) as! MedicineCell
-        cell.config(model: (self.medList?[indexPath.row])!)
+        cell.medNameLabel.text = medList[indexPath.row]
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete{
-            if let medItem = medList?[indexPath.row] {
-                try! DatabaseManager.shareInstance.database.write {
-                    DatabaseManager.shareInstance.database.delete(medItem)
-                }
-                medTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            }
-        }
-    }
-    
+    // Delete data:
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete{
+//            if let medItem = medList[indexPath.row] {
+//                try! DatabaseManager.shareInstance.database.write {
+//                    DatabaseManager.shareInstance.database.delete(medItem)
+//                }
+//                medTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//            }
+//        }
+//    }
 }
+
 

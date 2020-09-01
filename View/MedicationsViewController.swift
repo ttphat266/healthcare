@@ -11,10 +11,14 @@ import RealmSwift
 
 class MedicationsViewController: UIViewController {
     
-    @IBOutlet weak var medTableView: UITableView!
+    var lastedMedList: [String] = []
+    
+    @IBOutlet weak var latestMedTableView: UITableView!
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         addButton()
         userButton()
@@ -79,3 +83,14 @@ extension MedicationsViewController {
     }
 }
 
+extension MedicationsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lastedMedList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = latestMedTableView.dequeueReusableCell(withIdentifier: "LatestMedCell", for: indexPath) as! LatestMedicineCell
+        return cell
+    }
+}

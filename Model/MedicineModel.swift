@@ -9,9 +9,9 @@
 import UIKit
 import RealmSwift
 
-class MedicineModel: Object {
+class MedicineModel {
     
-    @objc dynamic var medText = ""
+    var medName = ""
+//    var medQuantity = 0
 
 }
-

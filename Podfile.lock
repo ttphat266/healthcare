@@ -1,26 +1,30 @@
 PODS:
   - FSCalendar (2.8.1)
-  - Realm (5.3.3):
-    - Realm/Headers (= 5.3.3)
-  - Realm/Headers (5.3.3)
-  - RealmSwift (5.3.3):
-    - Realm (= 5.3.3)
+  - Realm (5.3.4):
+    - Realm/Headers (= 5.3.4)
+  - Realm/Headers (5.3.4)
+  - RealmSwift (5.3.4):
+    - Realm (= 5.3.4)
+  - SideMenu (6.4.9)
 
 DEPENDENCIES:
   - FSCalendar
   - RealmSwift
+  - SideMenu
 
 SPEC REPOS:
   trunk:
     - FSCalendar
     - Realm
     - RealmSwift
+    - SideMenu
 
 SPEC CHECKSUMS:
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
-  Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
-  RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
+  Realm: 4dd457b6ed025041cf7efe05dae78c027ba842e0
+  RealmSwift: 233af88fffe05ed7f9305eecef100d477c0c2c42
+  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: 500915f8900341dbabe5db75342ffa26dc6d17c6
+PODFILE CHECKSUM: 17dc8a697714bf5b01f20eeaf968dbac686716c6
 
 COCOAPODS: 1.9.3

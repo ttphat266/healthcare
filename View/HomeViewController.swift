@@ -8,12 +8,13 @@
 
 import UIKit
 import FSCalendar
+import SideMenu
 
 class HomeViewController: UIViewController {
      
     fileprivate weak var calendar: FSCalendar!
     
-    var medications: [MedicineModel] = []
+    var sideMenu: SideMenuNavigationController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,5 +79,6 @@ extension HomeViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 37/255, green: 63/255, blue: 90/255, alpha: 100)
         self.navigationController?.navigationBar.barStyle = .black
     }
+    
 }
 
