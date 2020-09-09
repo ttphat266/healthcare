@@ -13,8 +13,8 @@ class Reminder: Object {
     
     static var sharedInstance = Reminder()
     
-    @objc dynamic var id: Int = 0
-    @objc dynamic var tittle: String = ""
+    @objc dynamic var reminderId: Int = 0
+    @objc dynamic var reminderTittle: String = ""
     @objc dynamic var date = Date()
     @objc dynamic var note: String = ""
     @objc dynamic var doctorId: Int = 0
@@ -22,7 +22,7 @@ class Reminder: Object {
     var medList = List<MedicineModel>()
     
     override class func primaryKey() -> String {
-        return "id"
+        return "reminderId"
     }
 }
 
@@ -34,5 +34,10 @@ class MedicineModel: Object {
     @objc dynamic var medName: String = ""
     @objc dynamic var medQuantity: Int = 0
     
+    override class func primaryKey() -> String {
+        return "medId"
+    }
 }
+
+
 

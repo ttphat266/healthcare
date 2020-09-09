@@ -12,8 +12,6 @@ import RealmSwift
 
 class MedicationsViewController: UIViewController {
     
-    var reminderList: [Reminder] = []
-    
     @IBOutlet weak var reminderTableView: UITableView!
      
     override func viewDidLoad() {
@@ -94,7 +92,7 @@ extension MedicationsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reminderTableView.dequeueReusableCell(withIdentifier: "ReminderCellId", for: indexPath) as! ReminderCell
         cell.titleLabel?.text = Reminder.shared.reminderList[indexPath.row].title
-        let date = Reminder.shared.reminderList[indexPath.row].date
+        let date = reminderList[indexPath.row].date
 
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM, dd, YYYY"
