@@ -11,34 +11,28 @@ import RealmSwift
 
 class AddMedicineViewController: UIViewController {
     
-    var medList: [String] = []
-    
     @IBOutlet weak var medTextField: UITextField!
+    @IBOutlet weak var medCountTextField: UITextField!
     @IBOutlet weak var medTableView: UITableView!
     @IBAction func addMed(_ sender: UIButton) {
         let medText = medTextField.text!
-        if medText.isEmpty == false {
-            medList.append(medText)
+        let countText = medCountTextField.text!
+        if !medText.isEmpty && !countText.isEmpty {
+            MedicineModel.shared.med.append(Medicine(medName: medText, medQuantity: Int(countText)!))
         }
-        medTextField.text = nil
-        print()
         
         medTableView.reloadData()
+        self.medTextField.text = ""
+        self.medCountTextField.text = ""
     }
-        
-        
-    
-//        DatabaseManager.shareInstance.addData(table: medTableView,text: medTextField)
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.medTableView.register(UINib(nibName: "MedicineCell", bundle: Bundle.main), forCellReuseIdentifier: "MedCellID")
-        let rightBarButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextButton))
-               self.navigationItem.rightBarButtonItem = rightBarButton
-               
-//        medList = DatabaseManager.shareInstance.database.objects(MedicineModel.self)
         
+        MedicineModel.shared.medList = DatabaseManager.shareInstance.database.objects(RealmModel.self)
+        
+        register()
+        nextTapped()
         hideKeyboardWhenTappedAround()
     }
     
@@ -46,13 +40,22 @@ class AddMedicineViewController: UIViewController {
 
 extension AddMedicineViewController {
     
+    func nextTapped() {
+        let rightBarButton = UIBarButtonItem(title: "Next",
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(nextButton))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
     @objc func nextButton() {
         let scheduleVC = ScheduleViewController()
         self.navigationController?.pushViewController(scheduleVC, animated: false)
     }
     
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
@@ -64,28 +67,36 @@ extension AddMedicineViewController {
 
 
 extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func register() {
+        self.medTableView.register(UINib(nibName: "MedicineCell", bundle: Bundle.main), forCellReuseIdentifier: "MedCellID")
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        medList.count
+        return MedicineModel.shared.med.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medTableView.dequeueReusableCell(withIdentifier: "MedCellID", for: indexPath) as! MedicineCell
-        cell.medNameLabel.text = medList[indexPath.row]
+        cell.medNameLabel.text = MedicineModel.shared.med[indexPath.row].medName
+        cell.medQuantityLabel.text = String(MedicineModel.shared.med[indexPath.row].medQuantity)
+
         return cell
     }
     
-    // Delete data:
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete{
-//            if let medItem = medList[indexPath.row] {
-//                try! DatabaseManager.shareInstance.database.write {
-//                    DatabaseManager.shareInstance.database.delete(medItem)
-//                }
-//                medTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-//            }
-//        }
-//    }
+//     Delete data:
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            MedicineModel.shared.med.remove(at: indexPath.row)
+            self.medTableView.beginUpdates()
+            self.medTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.medTableView.endUpdates()
+        }
+    }
 }
 
 

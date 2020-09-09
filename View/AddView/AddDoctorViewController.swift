@@ -9,6 +9,14 @@
 import UIKit
 
 class AddDoctorViewController: UIViewController {
+    
+    var doctorList: [DoctorModel] = []
+    
+    @IBOutlet weak var doctorNameTextField: UITextField!
+    @IBOutlet weak var doctorEmailTextField: UITextField!
+    @IBOutlet weak var mobileTextField: UITextField!
+    @IBOutlet weak var officeTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,4 +29,5 @@ class AddDoctorViewController: UIViewController {
     @objc func actionSaveDoctor() {
         
     }
+    
 }

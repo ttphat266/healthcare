@@ -24,27 +24,19 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1i-Bh-gg5">
-                        <rect key="frame" x="419.5" y="22.5" width="35.5" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="z1i-Bh-gg5" secondAttribute="height" multiplier="1:1" id="dgk-Aj-tQy"/>
-                        </constraints>
-                        <state key="normal" image="icons8-plus-50"/>
-                        <connections>
-                            <action selector="plusButton" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jZ9-eU-7sd"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7a-aW-rRy">
-                        <rect key="frame" x="336.5" y="24" width="25" height="32"/>
-                        <state key="normal" image="icons8-minus-50 "/>
-                        <connections>
-                            <action selector="minusButton" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6RI-P9-0yC"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt0-Q8-isn" userLabel="medQuantityLabel">
-                        <rect key="frame" x="369.5" y="30" width="42" height="20"/>
+                        <rect key="frame" x="405" y="30" width="42" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="eG8-Sh-Xts"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KH-fJ-YqF" userLabel="medQuantityLabel">
+                        <rect key="frame" x="327" y="30" width="70" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="k2U-3X-1hw"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,18 +45,14 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="G7a-aW-rRy" firstAttribute="height" secondItem="z1i-Bh-gg5" secondAttribute="height" multiplier="0.916667" id="5sg-iu-6vZ"/>
+                    <constraint firstAttribute="trailing" secondItem="Wt0-Q8-isn" secondAttribute="trailing" constant="16" id="5UD-1v-LlK"/>
                     <constraint firstItem="f17-n6-t3a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HCZ-VY-BGt"/>
-                    <constraint firstItem="G7a-aW-rRy" firstAttribute="centerY" secondItem="z1i-Bh-gg5" secondAttribute="centerY" id="KeG-Gf-mjF"/>
+                    <constraint firstItem="Wt0-Q8-isn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="I62-Gn-qBj"/>
                     <constraint firstItem="f17-n6-t3a" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PDf-Wf-3sQ"/>
                     <constraint firstItem="f17-n6-t3a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Q8K-AK-tW5"/>
-                    <constraint firstItem="z1i-Bh-gg5" firstAttribute="leading" secondItem="Wt0-Q8-isn" secondAttribute="trailing" constant="8" id="ZLv-wY-YWt"/>
-                    <constraint firstItem="G7a-aW-rRy" firstAttribute="width" secondItem="z1i-Bh-gg5" secondAttribute="width" multiplier="0.708333" id="d8A-59-2bM"/>
-                    <constraint firstItem="z1i-Bh-gg5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dNM-46-mqH"/>
                     <constraint firstAttribute="bottom" secondItem="f17-n6-t3a" secondAttribute="bottom" constant="8" id="fCt-RN-rOg"/>
-                    <constraint firstAttribute="trailing" secondItem="z1i-Bh-gg5" secondAttribute="trailing" constant="8" id="gf4-Kp-gt4"/>
-                    <constraint firstItem="Wt0-Q8-isn" firstAttribute="leading" secondItem="G7a-aW-rRy" secondAttribute="trailing" constant="8" id="nzy-nj-DS8"/>
-                    <constraint firstItem="Wt0-Q8-isn" firstAttribute="centerY" secondItem="z1i-Bh-gg5" secondAttribute="centerY" id="o62-Hd-vjI"/>
+                    <constraint firstItem="7KH-fJ-YqF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qq0-eo-RGN"/>
+                    <constraint firstItem="Wt0-Q8-isn" firstAttribute="leading" secondItem="7KH-fJ-YqF" secondAttribute="trailing" constant="8" id="sW4-Wp-rJ6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -75,8 +63,4 @@
             <point key="canvasLocation" x="241.30434782608697" y="154.01785714285714"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="icons8-minus-50 " width="25" height="25"/>
-        <image name="icons8-plus-50" width="25" height="25"/>
-    </resources>
 </document>

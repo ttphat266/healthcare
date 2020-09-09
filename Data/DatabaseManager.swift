@@ -11,37 +11,26 @@ import RealmSwift
 
 class DatabaseManager {
     
-    static var finalMedList = [MedicineModel]()
+    let database = try! Realm()
     
-    init() {
-        
+    static let shareInstance = DatabaseManager()
+    
+    func addData(table: UITableView ,text: UITextField) {
+        if text.text!.isEmpty {
+        } else {
+            let newObject = RealmModel()
+            newObject.Name = text.text!
+            
+            try! database.write {
+                database.add(newObject)
+            }
+            print(database.objects(RealmModel.self))
+            text.text = ""
+            table.reloadData()
+        }
     }
-   
-//    let database = try! Realm()
-//
-//    static let shareInstance = DatabaseManager()
-//
-//    func addData() {
-////      for medItem in AddMedicineViewController.medList {
-////            try! database.write {
-////
-////            }
-////        }
-//
-////        if text.text!.isEmpty {
-////        } else {
-////            let newMed = MedicineModel()
-////            newMed.medText = text.text!
-////
-////            try! database.write {
-////                database.add(newMed)
-////            }
-////            print(database.objects(MedicineModel.self))
-////            text.text = ""
-////            table.reloadData()
-////        }
-//    }
 }
+
 
 
  

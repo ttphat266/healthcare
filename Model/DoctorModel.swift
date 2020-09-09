@@ -15,14 +15,12 @@ class DoctorModel {
     var doctorAddress = ""
     var officeNumber = ""
     var mobileNumber = ""
-    var emergencyNumber = ""
     
-    init(doctorName: String, doctorMail: String, doctorAddress: String, officeNumber: String, mobileNumber: String, emergencyNumber: String) {
+    init(doctorName: String, doctorMail: String, doctorAddress: String, officeNumber: String, mobileNumber: String) {
         self.doctorName = doctorName
         self.doctorMail = doctorMail
         self.doctorAddress = doctorAddress
         self.officeNumber = officeNumber
         self.mobileNumber = mobileNumber
-        self.emergencyNumber = emergencyNumber
     }
 }

@@ -9,17 +9,18 @@
 import UIKit
 import RealmSwift
 
+
 class MedicationsViewController: UIViewController {
     
-    var lastedMedList: [String] = []
+    var reminderList: [Reminder] = []
     
-    @IBOutlet weak var latestMedTableView: UITableView!
+    @IBOutlet weak var reminderTableView: UITableView!
      
     override func viewDidLoad() {
         super.viewDidLoad()
         
        
-        
+        self.reminderTableView.register(UINib(nibName: "ReminderCell", bundle: nil), forCellReuseIdentifier: "ReminderCellId")
         addButton()
         userButton()
         setColorNavigationBar()
@@ -83,14 +84,24 @@ extension MedicationsViewController {
     }
 }
 
+
+    // Mark: TableView
 extension MedicationsViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lastedMedList.count
+        return reminderList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = latestMedTableView.dequeueReusableCell(withIdentifier: "LatestMedCell", for: indexPath) as! LatestMedicineCell
+        let cell = reminderTableView.dequeueReusableCell(withIdentifier: "ReminderCellId", for: indexPath) as! ReminderCell
+        cell.titleLabel?.text = Reminder.shared.reminderList[indexPath.row].title
+        let date = Reminder.shared.reminderList[indexPath.row].date
+
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM, dd, YYYY"
+        cell.timeLabel?.text = formatter.string(from: date)
+        
         return cell
     }
+    
+    
 }
