@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="datePicker" destination="h4P-hf-yy2" id="I2V-Bc-3u3"/>
                 <outlet property="datePickerView" destination="OGd-2O-K3k" id="fjJ-ZH-jCW"/>
+                <outlet property="noteTextField" destination="67b-Zn-zft" id="3wU-MQ-Y00"/>
                 <outlet property="timeTextField" destination="Kqi-e9-p1w" id="P2F-xJ-4cx"/>
                 <outlet property="titleTextField" destination="MEH-Wx-0fA" id="BMw-0l-b6C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -79,13 +80,27 @@
                         <action selector="tappedTextField" destination="-1" eventType="touchUpInside" id="vT1-Lg-CuA"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7M-Dh-xsB">
+                    <rect key="frame" x="0.0" y="304" width="37" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="67b-Zn-zft">
+                    <rect key="frame" x="0.0" y="339" width="414" height="50"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
                 <constraint firstItem="bzT-Fr-AEZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1CU-ty-zhM"/>
                 <constraint firstItem="XKG-4y-EOE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="41T-Kg-Pl9"/>
+                <constraint firstItem="X7M-Dh-xsB" firstAttribute="leading" secondItem="XKG-4y-EOE" secondAttribute="leading" id="4Em-qE-7Hi"/>
                 <constraint firstItem="OGd-2O-K3k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7ST-TH-z5v"/>
+                <constraint firstItem="67b-Zn-zft" firstAttribute="top" secondItem="X7M-Dh-xsB" secondAttribute="bottom" constant="10" id="A8x-ib-l2O"/>
                 <constraint firstItem="Kqi-e9-p1w" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Akw-Nk-KuM"/>
+                <constraint firstItem="X7M-Dh-xsB" firstAttribute="top" secondItem="Kqi-e9-p1w" secondAttribute="bottom" constant="20" id="BFI-Oe-GUN"/>
                 <constraint firstItem="pxJ-qB-981" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="G17-jL-d0n"/>
                 <constraint firstItem="OGd-2O-K3k" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GEm-Ij-v29"/>
                 <constraint firstItem="bzT-Fr-AEZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="HL8-hv-ddk"/>
@@ -93,13 +108,17 @@
                 <constraint firstItem="pxJ-qB-981" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mlp-AR-Nmh"/>
                 <constraint firstItem="bzT-Fr-AEZ" firstAttribute="top" secondItem="XKG-4y-EOE" secondAttribute="bottom" constant="10" id="Nmc-r4-Ejj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pxJ-qB-981" secondAttribute="trailing" id="Qgj-WD-jwy"/>
+                <constraint firstItem="X7M-Dh-xsB" firstAttribute="height" secondItem="XKG-4y-EOE" secondAttribute="height" id="W3s-WS-Cgk"/>
                 <constraint firstItem="Kqi-e9-p1w" firstAttribute="top" secondItem="XKG-4y-EOE" secondAttribute="bottom" constant="10" id="XyX-FG-UKh"/>
+                <constraint firstItem="67b-Zn-zft" firstAttribute="leading" secondItem="Kqi-e9-p1w" secondAttribute="leading" id="YSs-Ir-Sac"/>
+                <constraint firstItem="67b-Zn-zft" firstAttribute="trailing" secondItem="Kqi-e9-p1w" secondAttribute="trailing" id="cX0-yb-FiH"/>
                 <constraint firstItem="OGd-2O-K3k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gEJ-b7-hfK"/>
                 <constraint firstItem="MEH-Wx-0fA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gFo-nQ-EdM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XKG-4y-EOE" secondAttribute="trailing" id="gRe-LV-96g"/>
                 <constraint firstItem="Kqi-e9-p1w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gep-jo-1lf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MEH-Wx-0fA" secondAttribute="trailing" id="jNq-KU-hhb"/>
                 <constraint firstItem="MEH-Wx-0fA" firstAttribute="top" secondItem="pxJ-qB-981" secondAttribute="bottom" constant="10" id="jOE-i3-gg5"/>
+                <constraint firstItem="67b-Zn-zft" firstAttribute="height" secondItem="Kqi-e9-p1w" secondAttribute="height" id="onB-ZR-dGq"/>
                 <constraint firstItem="XKG-4y-EOE" firstAttribute="top" secondItem="MEH-Wx-0fA" secondAttribute="bottom" constant="20" id="rWA-Re-LYr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

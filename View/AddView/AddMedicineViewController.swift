@@ -11,14 +11,19 @@ import RealmSwift
 
 class AddMedicineViewController: UIViewController {
     
+    var draftTable: [MedicineItem] = []
+    
     @IBOutlet weak var medTextField: UITextField!
     @IBOutlet weak var medCountTextField: UITextField!
     @IBOutlet weak var medTableView: UITableView!
+    
     @IBAction func addMed(_ sender: UIButton) {
-        let medText = medTextField.text!
-        let countText = medCountTextField.text!
-        if !medText.isEmpty && !countText.isEmpty {
-            MedicineModel.shared.med.append(Medicine(medName: medText, medQuantity: Int(countText)!))
+        let newMed = MedicineItem()
+        newMed.medName = medTextField.text!
+        newMed.medQuantity = Int(medCountTextField.text!)!
+        
+        if newMed.medName.isEmpty {
+            draftTable.append(newMed)
         }
         
         medTableView.reloadData()
@@ -28,8 +33,6 @@ class AddMedicineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        MedicineModel.shared.medList = DatabaseManager.shareInstance.database.objects(RealmModel.self)
         
         register()
         nextTapped()
@@ -73,13 +76,13 @@ extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MedicineModel.shared.med.count
+        return draftTable.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medTableView.dequeueReusableCell(withIdentifier: "MedCellID", for: indexPath) as! MedicineCell
-        cell.medNameLabel.text = MedicineModel.shared.med[indexPath.row].medName
-        cell.medQuantityLabel.text = String(MedicineModel.shared.med[indexPath.row].medQuantity)
+        cell.medNameLabel.text = draftTable[indexPath.row].medName
+        cell.medQuantityLabel.text = String(draftTable[indexPath.row].medQuantity)
 
         return cell
     }
@@ -91,7 +94,7 @@ extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            MedicineModel.shared.med.remove(at: indexPath.row)
+            draftTable.remove(at: indexPath.row)
             self.medTableView.beginUpdates()
             self.medTableView.deleteRows(at: [indexPath], with: .automatic)
             self.medTableView.endUpdates()

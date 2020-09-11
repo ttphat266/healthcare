@@ -9,9 +9,9 @@
 import UIKit
 import RealmSwift
 
-class Reminder: Object {
+class ReminderItem: Object {
     
-    static var sharedInstance = Reminder()
+    static var sharedInstance = ReminderItem()
     
     @objc dynamic var reminderId: Int = 0
     @objc dynamic var reminderTittle: String = ""
@@ -19,16 +19,14 @@ class Reminder: Object {
     @objc dynamic var note: String = ""
     @objc dynamic var doctorId: Int = 0
     
-    var medList = List<MedicineModel>()
+    var medList = List<MedicineItem>()
     
     override class func primaryKey() -> String {
         return "reminderId"
     }
 }
 
-class MedicineModel: Object {
-    
-    static var sharedInstance = MedicineModel()
+class MedicineItem: Object {
     
     @objc dynamic var medId: Int = 0
     @objc dynamic var medName: String = ""
@@ -39,5 +37,41 @@ class MedicineModel: Object {
     }
 }
 
+class DatabaseManager {
+    
+    let database = try! Realm()
+    
+    static let shareInstance = DatabaseManager()
+
+    
+    func addData(title: String, note: String, date: Date) {
+        
+        let reminder = ReminderItem()
+        reminder.reminderTittle = title
+        reminder.note = note
+        reminder.date = date
+        
+        try! database.write {
+            database.add(reminder)
+        }
+    }
+    
+    func queryData(completion: (Bool) -> ()) {
+        do {
+            // results
+            let results = database.objects(ReminderItem.self)
+            
+            // convert to array
+            _ = Array(results)
+            
+            // call back
+            completion(true)
+            
+        } catch {
+            // call back
+            completion(false)
+        }
+    }
+}
 
 
