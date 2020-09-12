@@ -108,8 +108,6 @@
 				049E546E24D3EBD7001190D3 /* MedicationsViewController.xib */,
 				044C1B8C24C0607100E80E1C /* MoreViewController.swift */,
 				044C1B8D24C0607100E80E1C /* MoreViewController.xib */,
-				04ED8D2E24CE984200DBEF0D /* ScheduleViewController.swift */,
-				04ED8D2F24CE984200DBEF0D /* ScheduleViewController.xib */,
 				049E546824D3DFA3001190D3 /* Cell */,
 				04B5138324C9CB19001E3DF7 /* AddView */,
 				044C1B7924BDF0D600E80E1C /* Assets.xcassets */,
@@ -154,6 +152,8 @@
 			children = (
 				04B5138524C9CB6C001E3DF7 /* AddMedicineViewController.swift */,
 				04B5138624C9CB6C001E3DF7 /* AddMedicineViewController.xib */,
+				04ED8D2E24CE984200DBEF0D /* ScheduleViewController.swift */,
+				04ED8D2F24CE984200DBEF0D /* ScheduleViewController.xib */,
 				04B5138924C9CBB6001E3DF7 /* AddDoctorViewController.swift */,
 				04B5138A24C9CBB6001E3DF7 /* AddDoctorViewController.xib */,
 			);

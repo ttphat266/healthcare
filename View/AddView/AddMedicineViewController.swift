@@ -11,7 +11,7 @@ import RealmSwift
 
 class AddMedicineViewController: UIViewController {
     
-    var draftTable: [MedicineItem] = []
+    static var draftList: [MedicineItem] = []
     
     @IBOutlet weak var medTextField: UITextField!
     @IBOutlet weak var medCountTextField: UITextField!
@@ -22,11 +22,9 @@ class AddMedicineViewController: UIViewController {
         newMed.medName = medTextField.text!
         newMed.medQuantity = Int(medCountTextField.text!)!
         
-        if newMed.medName.isEmpty {
-            draftTable.append(newMed)
-        }
-        
+        AddMedicineViewController.draftList.append(newMed)
         medTableView.reloadData()
+        
         self.medTextField.text = ""
         self.medCountTextField.text = ""
     }
@@ -35,7 +33,7 @@ class AddMedicineViewController: UIViewController {
         super.viewDidLoad()
         
         register()
-        nextTapped()
+        saveMed()
         hideKeyboardWhenTappedAround()
     }
     
@@ -43,17 +41,16 @@ class AddMedicineViewController: UIViewController {
 
 extension AddMedicineViewController {
     
-    func nextTapped() {
+    func saveMed() {
         let rightBarButton = UIBarButtonItem(title: "Next",
                                              style: .plain,
                                              target: self,
-                                             action: #selector(nextButton))
+                                             action: #selector(saveAction))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    @objc func nextButton() {
-        let scheduleVC = ScheduleViewController()
-        self.navigationController?.pushViewController(scheduleVC, animated: false)
+    @objc func saveAction() {
+        
     }
     
     func hideKeyboardWhenTappedAround() {
@@ -76,13 +73,13 @@ extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return draftTable.count
+        return AddMedicineViewController.draftList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medTableView.dequeueReusableCell(withIdentifier: "MedCellID", for: indexPath) as! MedicineCell
-        cell.medNameLabel.text = draftTable[indexPath.row].medName
-        cell.medQuantityLabel.text = String(draftTable[indexPath.row].medQuantity)
+        cell.medNameLabel.text = AddMedicineViewController.draftList[indexPath.row].medName
+        cell.medQuantityLabel.text = String(AddMedicineViewController.draftList[indexPath.row].medQuantity)
 
         return cell
     }
@@ -94,7 +91,7 @@ extension AddMedicineViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            draftTable.remove(at: indexPath.row)
+            AddMedicineViewController.draftList.remove(at: indexPath.row)
             self.medTableView.beginUpdates()
             self.medTableView.deleteRows(at: [indexPath], with: .automatic)
             self.medTableView.endUpdates()

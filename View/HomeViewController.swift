@@ -8,77 +8,65 @@
 
 import UIKit
 import FSCalendar
-import SideMenu
 
 class HomeViewController: UIViewController {
-     
-    fileprivate weak var calendar: FSCalendar!
     
-    var sideMenu: SideMenuNavigationController!
+    @IBOutlet weak var reminderTableView: UITableView!
+    
+    fileprivate weak var calendar: FSCalendar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        register()
         addButton()
-        userButton()
         setColorNavigationBar()
     }
 }
 
 extension HomeViewController {
         
-    @objc func addAction() {
-        let alertController = UIAlertController(title: "Please choose one", message: "", preferredStyle: .actionSheet)
-          
-        let addMedAction = UIAlertAction(title: "Add a medicine", style: .default, handler: { (alert: UIAlertAction!) -> Void in
-              let addMedlView = AddMedicineViewController()
-              self.navigationController?.pushViewController(addMedlView, animated: true)
-              print("added")
-          })
-        
-        let addDoctorAction = UIAlertAction(title: "Add a doctor", style: .default, handler: { (alert: UIAlertAction!) -> Void in
-            let addDoctorView = AddDoctorViewController()
-            self.navigationController?.pushViewController(addDoctorView, animated: true)
-            print("added")
-        })
-        
-        let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (alert: UIAlertAction!) -> Void in })
-            alertController.addAction(addMedAction)
-            alertController.addAction(addDoctorAction)
-            alertController.addAction(doneAction)
-        
-          self.present(alertController, animated: true, completion: nil)
-
-    }
-    
-    @objc func userInfo() {
-        print("user")
-    }
-
     func addButton() {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add,
                                              target: self,
-                                             action: #selector(addAction))
+                                             action: #selector(addReminder))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    func userButton() {
-        let userLeftBarButton = UIBarButtonItem(image: UIImage(named: "user"),
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(userInfo))
-        let leftItem = UIBarButtonItem(title: "User",
-                                       style: .plain,
-                                       target: self,
-                                       action: nil)
-        self.navigationItem.leftBarButtonItem = leftItem
-        self.navigationItem.leftBarButtonItem = userLeftBarButton
+    @objc func addReminder() {
+        let scheduleVC = ScheduleViewController()
+        self.navigationController?.pushViewController(scheduleVC, animated: true)
     }
+    
     
     func setColorNavigationBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 37/255, green: 63/255, blue: 90/255, alpha: 100)
         self.navigationController?.navigationBar.barStyle = .black
     }
+    
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func register() {
+        self.reminderTableView.register(UINib(nibName: "ReminderCell", bundle: Bundle.main), forCellReuseIdentifier: "ReminderCellId")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DatabaseManager.shareInstance.reminderList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = reminderTableView.dequeueReusableCell(withIdentifier: "ReminderCellId", for: indexPath) as! ReminderCell
+        cell.titleLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderTittle
+        cell.noteLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderNote
+        
+        cell.timeLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderDate
+        
+        
+        return cell
+    }
+    
     
 }
 

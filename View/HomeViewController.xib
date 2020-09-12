@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="HealthCare" customModuleProvider="target">
             <connections>
+                <outlet property="reminderTableView" destination="eu7-93-FCG" id="lVE-D3-7SS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,12 +30,20 @@
                         <outlet property="delegate" destination="-1" id="WNH-OL-DP0"/>
                     </connections>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-93-FCG">
+                    <rect key="frame" x="0.0" y="364" width="414" height="498"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eu7-93-FCG" secondAttribute="bottom" id="MJ8-Jw-JTX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eu7-93-FCG" secondAttribute="trailing" id="OyO-qQ-l6e"/>
                 <constraint firstItem="8nl-2e-HAo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gdv-GL-4JX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8nl-2e-HAo" secondAttribute="trailing" id="rL2-G7-zx5"/>
+                <constraint firstItem="eu7-93-FCG" firstAttribute="top" secondItem="8nl-2e-HAo" secondAttribute="bottom" constant="20" id="s2z-hV-PGJ"/>
                 <constraint firstItem="8nl-2e-HAo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wLk-YW-VkC"/>
+                <constraint firstItem="eu7-93-FCG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xEY-9r-5Qz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="27.536231884057973" y="81.696428571428569"/>

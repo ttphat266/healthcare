@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import RealmSwift
 
 class ScheduleViewController: UIViewController {
 
@@ -36,13 +37,10 @@ extension ScheduleViewController  {
                                              target: self,
                                              action: #selector(isHiden))
         self.navigationItem.rightBarButtonItem = rightBarButton
-
-
     }
     
     @objc func isHiden() {
-//        addDataToRealm()
-//        didTappedDone()
+        
     }
     
 //    func didTappedDone() {
@@ -102,11 +100,11 @@ extension ScheduleViewController  {
 //    }
 }
 
-extension ScheduleViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
+//extension ScheduleViewController: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//}
 
 
