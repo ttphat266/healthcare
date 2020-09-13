@@ -43,61 +43,7 @@ extension ScheduleViewController  {
         
     }
     
-//    func didTappedDone() {
-//        if let titleText = titleTextField.text, !titleText.isEmpty,
-//            let timeText = timeTextField.text, !timeText.isEmpty {
-//            let targetDate = datePicker.date
-//            MedicationsViewController.completion!(titleText, targetDate)
-//        }
-//
-//        // Mark: Set notification:
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
-//            if success {
-//                self.reminderContent()
-//            }
-//            else if error != nil {
-//                print("error")
-//            }
-//        })
-//    }
-    
-    // Mark: Content Notification:
-//    func reminderContent() {
-//        MedicationsViewController.completion = { title, date in
-//           DispatchQueue.main.async {
-//                self.navigationController?.popToRootViewController(animated: true)
-//                let new = ReminderModel()
-//                Reminder.shared.reminderList.append(new)
-//
-//                let content = UNMutableNotificationContent()
-//                content.title = title
-//                content.sound = .default
-//
-//                let targetDate = date
-//                let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate),repeats: false)
-//
-//                let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
-//                UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-//                    if error != nil {
-//                        print("something went wrong")
-//                    }
-//                })
-//            }
-//        }
-//    }
-    
-    // Creat Realm Data:
-//    func addDataToRealm() {
-//        for i in 0...MedicineModel.shared.med.count - 1 {
-//            let object = RealmModel()
-//            object.Name = MedicineModel.shared.med[i].medName
-//            object.Quantity = MedicineModel.shared.med[i].medQuantity
-//            try! MedicineModel.shared.realm.write({
-//                MedicineModel.shared.realm.add(object)
-//            })
-//        }
-//        print(MedicineModel.shared.realm.objects(RealmModel.self))
-//    }
+//    
 }
 
 //extension ScheduleViewController: UITextFieldDelegate {

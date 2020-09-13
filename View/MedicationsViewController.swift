@@ -57,7 +57,6 @@ extension MedicationsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medicineTableView.dequeueReusableCell(withIdentifier: "MedCellId", for: indexPath) as! MedicineCell
-        cell.medNameLabel?.text 
         
         return cell
     }

@@ -61,9 +61,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderTittle
         cell.noteLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderNote
         
-        cell.timeLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderDate
-        
-        
         return cell
     }
     
