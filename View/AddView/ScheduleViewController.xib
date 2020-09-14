@@ -14,7 +14,7 @@
                 <outlet property="datePickerView" destination="OGd-2O-K3k" id="fjJ-ZH-jCW"/>
                 <outlet property="noteTextField" destination="67b-Zn-zft" id="3wU-MQ-Y00"/>
                 <outlet property="timeTextField" destination="Kqi-e9-p1w" id="P2F-xJ-4cx"/>
-                <outlet property="titleTextField" destination="MEH-Wx-0fA" id="BMw-0l-b6C"/>
+                <outlet property="tittleTextField" destination="MEH-Wx-0fA" id="h1N-Lx-Y1V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

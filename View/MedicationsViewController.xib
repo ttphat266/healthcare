@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicationsViewController" customModule="HealthCare" customModuleProvider="target">
             <connections>
-                <outlet property="reminderTableView" destination="dLa-aG-k3H" id="Jfl-RA-mMO"/>
+                <outlet property="medicineTableView" destination="dLa-aG-k3H" id="cgB-bg-nZY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="GRN-B9-1dC"/>
             </connections>
         </placeholder>

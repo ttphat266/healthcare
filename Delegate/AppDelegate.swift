@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var firstTabNavigationController : UINavigationController!
     var secondTabNavigationControoller : UINavigationController!
-    var thirdTabNavigationController : UINavigationController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
@@ -24,24 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
         
         firstTabNavigationController   = UINavigationController.init(rootViewController: HomeViewController())
-        secondTabNavigationControoller = UINavigationController.init(rootViewController: MedicationsViewController())
-        thirdTabNavigationController   = UINavigationController.init(rootViewController: MoreViewController())
         
-        tabBarController.viewControllers = [firstTabNavigationController, secondTabNavigationControoller, thirdTabNavigationController]
+        secondTabNavigationControoller   = UINavigationController.init(rootViewController: MoreViewController())
+        
+        tabBarController.viewControllers = [firstTabNavigationController, secondTabNavigationControoller]
         
         let item1 = UITabBarItem(title: "Home",
                                  image: UIImage(named: "home-icon"),
                                  selectedImage: UIImage(named: "homefilled-icon"))
-        let item2 = UITabBarItem(title: "Medications",
-                                 image: UIImage(named: "pill-icon"),
-                                 selectedImage: UIImage(named: "pillfilled-icon"))
+
         let item3 = UITabBarItem(title: "More",
                                  image: UIImage(named: "more-icon"),
                                  selectedImage: UIImage(named: "morefilled-icon"))
         
         firstTabNavigationController.tabBarItem   = item1
-        secondTabNavigationControoller.tabBarItem = item2
-        thirdTabNavigationController.tabBarItem   = item3
+        
+        secondTabNavigationControoller.tabBarItem   = item3
         
         UITabBar.appearance().tintColor    = UIColor(red: 53/255.0, green: 116/255.0, blue: 135/255.0, alpha: 1.0)
         UITabBar.appearance().barTintColor = UIColor(red: 28/255.0, green: 28/255.0, blue: 30/255.0, alpha: 1.0)

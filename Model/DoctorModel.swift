@@ -8,19 +8,19 @@
 
 import Foundation
 
-//class DoctorModel {
-//    
-//    var doctorName = ""
-//    var doctorMail = ""
-//    var doctorAddress = ""
-//    var officeNumber = ""
-//    var mobileNumber = ""
-//    
-//    init(doctorName: String, doctorMail: String, doctorAddress: String, officeNumber: String, mobileNumber: String) {
-//        self.doctorName = doctorName
-//        self.doctorMail = doctorMail
-//        self.doctorAddress = doctorAddress
-//        self.officeNumber = officeNumber
-//        self.mobileNumber = mobileNumber
-//    }
-//}
+class DoctorModel {
+    
+    var doctorName = ""
+    var doctorMail = ""
+    var doctorAddress = ""
+    var officeNumber = ""
+    var mobileNumber = ""
+    
+    init(doctorName: String, doctorMail: String, doctorAddress: String, officeNumber: String, mobileNumber: String) {
+        self.doctorName = doctorName
+        self.doctorMail = doctorMail
+        self.doctorAddress = doctorAddress
+        self.officeNumber = officeNumber
+        self.mobileNumber = mobileNumber
+    }
+}

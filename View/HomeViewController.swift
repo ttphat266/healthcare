@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         register()
         addButton()
@@ -34,8 +36,8 @@ extension HomeViewController {
     }
     
     @objc func addReminder() {
-        let scheduleVC = ScheduleViewController()
-        self.navigationController?.pushViewController(scheduleVC, animated: true)
+        let addMedVC = AddMedicineViewController()
+        self.navigationController?.pushViewController(addMedVC, animated: true)
     }
     
     
@@ -53,13 +55,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DatabaseManager.shareInstance.reminderList.count
+        return DatabaseManager.shareInstance.getData().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reminderTableView.dequeueReusableCell(withIdentifier: "ReminderCellId", for: indexPath) as! ReminderCell
-        cell.titleLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderTittle
-        cell.noteLabel?.text = DatabaseManager.shareInstance.reminderList[indexPath.row].reminderNote
+        
+        let index = UInt(indexPath.row)
+        let item = DatabaseManager.shareInstance.getData()[Int(index)] 
+
+        cell.titleLabel?.text = item.reminderTittle
+        cell.noteLabel?.text = item.reminderNote
+        
         
         return cell
     }

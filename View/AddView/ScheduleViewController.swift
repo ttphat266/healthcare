@@ -13,7 +13,7 @@ import RealmSwift
 class ScheduleViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var tittleTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextField!
     @IBOutlet weak var datePickerView: UIView!
@@ -21,7 +21,7 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneAction()
+        doneButton()
     }
     
     @IBAction func tappedTextField() {
@@ -32,18 +32,25 @@ class ScheduleViewController: UIViewController {
     // Mark:   Set up doneAction
 extension ScheduleViewController  {
     
-    func doneAction() {
+    func doneButton() {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .done,
                                              target: self,
-                                             action: #selector(isHiden))
+                                             action: #selector(doneAction))
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    @objc func isHiden() {
-        
+    @objc func doneAction() {
+        self.navigationController?.popViewController(animated: true)
+        let tittle = tittleTextField!.text
+        let note = noteTextField?.text
+        let date = datePicker.date
+        let medicinesList = AddMedicineViewController.draftList
+        DatabaseManager.shareInstance.addData(title: tittle!, note: note!, date: date, medicines: medicinesList)
+        self.navigationController?.popToRootViewController(animated: true)
+
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     
-//    
 }
 
 //extension ScheduleViewController: UITextFieldDelegate {

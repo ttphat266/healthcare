@@ -104,10 +104,10 @@
 			children = (
 				043C535F24C6CF1800AAEB92 /* HomeViewController.swift */,
 				043C536024C6CF1800AAEB92 /* HomeViewController.xib */,
-				049E546D24D3EBD7001190D3 /* MedicationsViewController.swift */,
-				049E546E24D3EBD7001190D3 /* MedicationsViewController.xib */,
 				044C1B8C24C0607100E80E1C /* MoreViewController.swift */,
 				044C1B8D24C0607100E80E1C /* MoreViewController.xib */,
+				049E546D24D3EBD7001190D3 /* MedicationsViewController.swift */,
+				049E546E24D3EBD7001190D3 /* MedicationsViewController.xib */,
 				049E546824D3DFA3001190D3 /* Cell */,
 				04B5138324C9CB19001E3DF7 /* AddView */,
 				044C1B7924BDF0D600E80E1C /* Assets.xcassets */,

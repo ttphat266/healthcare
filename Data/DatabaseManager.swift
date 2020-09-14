@@ -15,7 +15,13 @@ class DatabaseManager {
 
     static let shareInstance = DatabaseManager()
 
-    let reminderList = List<ReminderItem>()
+//    let reminderList = List<ReminderItem>()
+    
+    func getData() -> Results<ReminderItem> {
+        
+        let results: Results<ReminderItem> = database.objects(ReminderItem.self)
+        return results
+    }
 
     func addData(title: String, note: String, date: Date, medicines: [MedicineItem]) {
 
@@ -32,6 +38,10 @@ class DatabaseManager {
             database.add(remind)
         }
     }
+    
+    
+    
+    
     
     
 }
