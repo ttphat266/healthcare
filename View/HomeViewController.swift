@@ -18,16 +18,18 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         register()
         addButton()
-        setColorNavigationBar()
+        setNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reminderTableView.reloadData()
     }
 }
 
 extension HomeViewController {
-        
     func addButton() {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add,
                                              target: self,
@@ -41,7 +43,7 @@ extension HomeViewController {
     }
     
     
-    func setColorNavigationBar() {
+    func setNavigationBar() {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 37/255, green: 63/255, blue: 90/255, alpha: 100)
         self.navigationController?.navigationBar.barStyle = .black
     }
@@ -55,22 +57,38 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DatabaseManager.shareInstance.getData().count
+        return DatabaseManager.shareInstance.getReminder().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reminderTableView.dequeueReusableCell(withIdentifier: "ReminderCellId", for: indexPath) as! ReminderCell
-        
-        let index = UInt(indexPath.row)
-        let item = DatabaseManager.shareInstance.getData()[Int(index)] 
+        let item = DatabaseManager.shareInstance.reminderList[indexPath.row]
 
-        cell.titleLabel?.text = item.reminderTittle
-        cell.noteLabel?.text = item.reminderNote
+        cell.titleLabel?.text = "\("Medicine name: ") \(item.reminderTittle)"
+        cell.noteLabel?.text = "\("Note: ") \(item.reminderNote)"
         
-        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+
+        let timeInDB: Date = item.reminderDate
+        cell.timeLabel?.text = "Time: \(dateFormatter.string(from: timeInDB))"
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVc = DetailsViewController()
+        detailVc.index = indexPath.row
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let remind = DatabaseManager.shareInstance.getReminder() [indexPath.row]
+            DatabaseManager.shareInstance.deleteReminder(remind: remind)
+            self.reminderTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.reminderTableView.reloadData()
+            print(DatabaseManager.shareInstance.getReminder())
+        }
+    }
 }
 

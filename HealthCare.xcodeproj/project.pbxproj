@@ -9,26 +9,29 @@
 /* Begin PBXBuildFile section */
 		043C536124C6CF1800AAEB92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C535F24C6CF1800AAEB92 /* HomeViewController.swift */; };
 		043C536224C6CF1800AAEB92 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C536024C6CF1800AAEB92 /* HomeViewController.xib */; };
+		044659E025135A1500343E86 /* AddNewMedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044659DE25135A1500343E86 /* AddNewMedicineViewController.xib */; };
+		044659E42513C70200343E86 /* AddNewMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044659E32513C70200343E86 /* AddNewMedicineViewController.swift */; };
 		044C1B7124BDF0D300E80E1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C1B7024BDF0D300E80E1C /* AppDelegate.swift */; };
 		044C1B7A24BDF0D600E80E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044C1B7924BDF0D600E80E1C /* Assets.xcassets */; };
 		044C1B7D24BDF0D600E80E1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044C1B7B24BDF0D600E80E1C /* LaunchScreen.storyboard */; };
 		044C1B8E24C0607100E80E1C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C1B8C24C0607100E80E1C /* MoreViewController.swift */; };
 		044C1B8F24C0607100E80E1C /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044C1B8D24C0607100E80E1C /* MoreViewController.xib */; };
 		044C1B9524C06BDF00E80E1C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C1B9424C06BDF00E80E1C /* Model.swift */; };
+		045520B625104B1400DD3CB9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045520B425104B1400DD3CB9 /* DetailsViewController.swift */; };
+		045520B725104B1400DD3CB9 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045520B525104B1400DD3CB9 /* DetailsViewController.xib */; };
+		045520BA25106A0E00DD3CB9 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045520B825106A0E00DD3CB9 /* DetailsCell.swift */; };
+		045520BB25106A0E00DD3CB9 /* DetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045520B925106A0E00DD3CB9 /* DetailsCell.xib */; };
 		046044E424DE80C8005A4544 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046044E324DE80C8005A4544 /* DatabaseManager.swift */; };
 		046777B124E7C1EA009F6617 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046777AF24E7C1EA009F6617 /* MedicineCell.swift */; };
 		046777B224E7C1EA009F6617 /* MedicineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046777B024E7C1EA009F6617 /* MedicineCell.xib */; };
+		046BE4482514B796004D3B28 /* EditMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE4462514B796004D3B28 /* EditMedicineViewController.swift */; };
+		046BE44B2514B7F4004D3B28 /* EditMedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046BE44A2514B7F4004D3B28 /* EditMedicineViewController.xib */; };
 		048DC4AC25076A4A00F9F2AE /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048DC4AA25076A4A00F9F2AE /* ReminderCell.swift */; };
 		048DC4AD25076A4A00F9F2AE /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048DC4AB25076A4A00F9F2AE /* ReminderCell.xib */; };
 		049E546B24D3DFCC001190D3 /* DoctorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E546924D3DFCC001190D3 /* DoctorCell.swift */; };
 		049E546C24D3DFCC001190D3 /* DoctorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049E546A24D3DFCC001190D3 /* DoctorCell.xib */; };
-		049E546F24D3EBD7001190D3 /* MedicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E546D24D3EBD7001190D3 /* MedicationsViewController.swift */; };
-		049E547024D3EBD7001190D3 /* MedicationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049E546E24D3EBD7001190D3 /* MedicationsViewController.xib */; };
 		04B5138724C9CB6C001E3DF7 /* AddMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5138524C9CB6C001E3DF7 /* AddMedicineViewController.swift */; };
 		04B5138824C9CB6C001E3DF7 /* AddMedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B5138624C9CB6C001E3DF7 /* AddMedicineViewController.xib */; };
-		04B5138B24C9CBB6001E3DF7 /* AddDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5138924C9CBB6001E3DF7 /* AddDoctorViewController.swift */; };
-		04B5138C24C9CBB6001E3DF7 /* AddDoctorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B5138A24C9CBB6001E3DF7 /* AddDoctorViewController.xib */; };
-		04B5139424C9CD22001E3DF7 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5139324C9CD22001E3DF7 /* DoctorModel.swift */; };
 		04ED8D3024CE984200DBEF0D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ED8D2E24CE984200DBEF0D /* ScheduleViewController.swift */; };
 		04ED8D3124CE984200DBEF0D /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04ED8D2F24CE984200DBEF0D /* ScheduleViewController.xib */; };
 		A55CE90F7FAEF0FD0EDD555B /* Pods_HealthCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230D145CDECCB814691180B5 /* Pods_HealthCare.framework */; };
@@ -37,6 +40,8 @@
 /* Begin PBXFileReference section */
 		043C535F24C6CF1800AAEB92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		043C536024C6CF1800AAEB92 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		044659DE25135A1500343E86 /* AddNewMedicineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewMedicineViewController.xib; sourceTree = "<group>"; };
+		044659E32513C70200343E86 /* AddNewMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMedicineViewController.swift; sourceTree = "<group>"; };
 		044C1B6D24BDF0D300E80E1C /* HealthCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044C1B7024BDF0D300E80E1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044C1B7924BDF0D600E80E1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,20 +50,21 @@
 		044C1B8C24C0607100E80E1C /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		044C1B8D24C0607100E80E1C /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		044C1B9424C06BDF00E80E1C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		045520B425104B1400DD3CB9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		045520B525104B1400DD3CB9 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		045520B825106A0E00DD3CB9 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		045520B925106A0E00DD3CB9 /* DetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsCell.xib; sourceTree = "<group>"; };
 		046044E324DE80C8005A4544 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		046777AF24E7C1EA009F6617 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
 		046777B024E7C1EA009F6617 /* MedicineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineCell.xib; sourceTree = "<group>"; };
+		046BE4462514B796004D3B28 /* EditMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicineViewController.swift; sourceTree = "<group>"; };
+		046BE44A2514B7F4004D3B28 /* EditMedicineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditMedicineViewController.xib; sourceTree = "<group>"; };
 		048DC4AA25076A4A00F9F2AE /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		048DC4AB25076A4A00F9F2AE /* ReminderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCell.xib; sourceTree = "<group>"; };
 		049E546924D3DFCC001190D3 /* DoctorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCell.swift; sourceTree = "<group>"; };
 		049E546A24D3DFCC001190D3 /* DoctorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCell.xib; sourceTree = "<group>"; };
-		049E546D24D3EBD7001190D3 /* MedicationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsViewController.swift; sourceTree = "<group>"; };
-		049E546E24D3EBD7001190D3 /* MedicationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicationsViewController.xib; sourceTree = "<group>"; };
 		04B5138524C9CB6C001E3DF7 /* AddMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineViewController.swift; sourceTree = "<group>"; };
 		04B5138624C9CB6C001E3DF7 /* AddMedicineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMedicineViewController.xib; sourceTree = "<group>"; };
-		04B5138924C9CBB6001E3DF7 /* AddDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDoctorViewController.swift; sourceTree = "<group>"; };
-		04B5138A24C9CBB6001E3DF7 /* AddDoctorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddDoctorViewController.xib; sourceTree = "<group>"; };
-		04B5139324C9CD22001E3DF7 /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		04ED8D2E24CE984200DBEF0D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		04ED8D2F24CE984200DBEF0D /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
 		230D145CDECCB814691180B5 /* Pods_HealthCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,8 +112,12 @@
 				043C536024C6CF1800AAEB92 /* HomeViewController.xib */,
 				044C1B8C24C0607100E80E1C /* MoreViewController.swift */,
 				044C1B8D24C0607100E80E1C /* MoreViewController.xib */,
-				049E546D24D3EBD7001190D3 /* MedicationsViewController.swift */,
-				049E546E24D3EBD7001190D3 /* MedicationsViewController.xib */,
+				045520B425104B1400DD3CB9 /* DetailsViewController.swift */,
+				045520B525104B1400DD3CB9 /* DetailsViewController.xib */,
+				044659E32513C70200343E86 /* AddNewMedicineViewController.swift */,
+				044659DE25135A1500343E86 /* AddNewMedicineViewController.xib */,
+				046BE4462514B796004D3B28 /* EditMedicineViewController.swift */,
+				046BE44A2514B7F4004D3B28 /* EditMedicineViewController.xib */,
 				049E546824D3DFA3001190D3 /* Cell */,
 				04B5138324C9CB19001E3DF7 /* AddView */,
 				044C1B7924BDF0D600E80E1C /* Assets.xcassets */,
@@ -121,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				044C1B9424C06BDF00E80E1C /* Model.swift */,
-				04B5139324C9CD22001E3DF7 /* DoctorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +150,8 @@
 				046777B024E7C1EA009F6617 /* MedicineCell.xib */,
 				048DC4AA25076A4A00F9F2AE /* ReminderCell.swift */,
 				048DC4AB25076A4A00F9F2AE /* ReminderCell.xib */,
+				045520B825106A0E00DD3CB9 /* DetailsCell.swift */,
+				045520B925106A0E00DD3CB9 /* DetailsCell.xib */,
 				049E546924D3DFCC001190D3 /* DoctorCell.swift */,
 				049E546A24D3DFCC001190D3 /* DoctorCell.xib */,
 			);
@@ -154,8 +165,6 @@
 				04B5138624C9CB6C001E3DF7 /* AddMedicineViewController.xib */,
 				04ED8D2E24CE984200DBEF0D /* ScheduleViewController.swift */,
 				04ED8D2F24CE984200DBEF0D /* ScheduleViewController.xib */,
-				04B5138924C9CBB6001E3DF7 /* AddDoctorViewController.swift */,
-				04B5138A24C9CBB6001E3DF7 /* AddDoctorViewController.xib */,
 			);
 			path = AddView;
 			sourceTree = "<group>";
@@ -246,16 +255,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				04ED8D3124CE984200DBEF0D /* ScheduleViewController.xib in Resources */,
-				04B5138C24C9CBB6001E3DF7 /* AddDoctorViewController.xib in Resources */,
 				04B5138824C9CB6C001E3DF7 /* AddMedicineViewController.xib in Resources */,
 				048DC4AD25076A4A00F9F2AE /* ReminderCell.xib in Resources */,
+				046BE44B2514B7F4004D3B28 /* EditMedicineViewController.xib in Resources */,
 				049E546C24D3DFCC001190D3 /* DoctorCell.xib in Resources */,
 				043C536224C6CF1800AAEB92 /* HomeViewController.xib in Resources */,
 				044C1B7D24BDF0D600E80E1C /* LaunchScreen.storyboard in Resources */,
 				046777B224E7C1EA009F6617 /* MedicineCell.xib in Resources */,
 				044C1B8F24C0607100E80E1C /* MoreViewController.xib in Resources */,
 				044C1B7A24BDF0D600E80E1C /* Assets.xcassets in Resources */,
-				049E547024D3EBD7001190D3 /* MedicationsViewController.xib in Resources */,
+				045520BB25106A0E00DD3CB9 /* DetailsCell.xib in Resources */,
+				044659E025135A1500343E86 /* AddNewMedicineViewController.xib in Resources */,
+				045520B725104B1400DD3CB9 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,18 +320,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B5138724C9CB6C001E3DF7 /* AddMedicineViewController.swift in Sources */,
+				046BE4482514B796004D3B28 /* EditMedicineViewController.swift in Sources */,
 				044C1B9524C06BDF00E80E1C /* Model.swift in Sources */,
+				044659E42513C70200343E86 /* AddNewMedicineViewController.swift in Sources */,
 				04ED8D3024CE984200DBEF0D /* ScheduleViewController.swift in Sources */,
 				048DC4AC25076A4A00F9F2AE /* ReminderCell.swift in Sources */,
 				046044E424DE80C8005A4544 /* DatabaseManager.swift in Sources */,
 				044C1B8E24C0607100E80E1C /* MoreViewController.swift in Sources */,
 				044C1B7124BDF0D300E80E1C /* AppDelegate.swift in Sources */,
 				049E546B24D3DFCC001190D3 /* DoctorCell.swift in Sources */,
-				04B5138B24C9CBB6001E3DF7 /* AddDoctorViewController.swift in Sources */,
 				043C536124C6CF1800AAEB92 /* HomeViewController.swift in Sources */,
 				046777B124E7C1EA009F6617 /* MedicineCell.swift in Sources */,
-				04B5139424C9CD22001E3DF7 /* DoctorModel.swift in Sources */,
-				049E546F24D3EBD7001190D3 /* MedicationsViewController.swift in Sources */,
+				045520B625104B1400DD3CB9 /* DetailsViewController.swift in Sources */,
+				045520BA25106A0E00DD3CB9 /* DetailsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

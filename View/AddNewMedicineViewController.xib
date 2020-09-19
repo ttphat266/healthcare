@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewMedicineViewController" customModule="HealthCare" customModuleProvider="target">
+            <connections>
+                <outlet property="quantitySuperView" destination="SIg-lh-AJO" id="mdP-Ot-66G"/>
+                <outlet property="titteSupperView" destination="JEL-zZ-GHe" id="6p8-R1-l66"/>
+                <outlet property="updateNameTextField" destination="lqG-tV-4K2" id="dJH-6q-Qtp"/>
+                <outlet property="updateQuantityTextField" destination="xnF-DA-hiY" id="fy5-Wn-sVC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeT-l4-Yi3">
+                    <rect key="frame" x="16" y="114" width="382" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="DJ9-hW-YUi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEL-zZ-GHe">
+                    <rect key="frame" x="16" y="144" width="382" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Medicine Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lqG-tV-4K2">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="lqG-tV-4K2" secondAttribute="trailing" id="6mb-0C-0v2"/>
+                        <constraint firstItem="lqG-tV-4K2" firstAttribute="top" secondItem="JEL-zZ-GHe" secondAttribute="top" id="XmN-wt-20c"/>
+                        <constraint firstItem="lqG-tV-4K2" firstAttribute="leading" secondItem="JEL-zZ-GHe" secondAttribute="leading" id="aOG-Wp-HT7"/>
+                        <constraint firstAttribute="bottom" secondItem="lqG-tV-4K2" secondAttribute="bottom" id="lJI-9l-Tfh"/>
+                        <constraint firstAttribute="height" constant="50" id="twL-N6-rIE"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Seu-fA-Z8r">
+                    <rect key="frame" x="16" y="214" width="382" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="mYm-h4-Wlm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIg-lh-AJO">
+                    <rect key="frame" x="16" y="244" width="382" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xnF-DA-hiY">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="xnF-DA-hiY" firstAttribute="leading" secondItem="SIg-lh-AJO" secondAttribute="leading" id="B30-wv-e4P"/>
+                        <constraint firstAttribute="trailing" secondItem="xnF-DA-hiY" secondAttribute="trailing" id="OoE-Vv-BMu"/>
+                        <constraint firstAttribute="height" constant="50" id="Rfa-dR-EsQ"/>
+                        <constraint firstItem="xnF-DA-hiY" firstAttribute="top" secondItem="SIg-lh-AJO" secondAttribute="top" id="SUI-sj-AnJ"/>
+                        <constraint firstAttribute="bottom" secondItem="xnF-DA-hiY" secondAttribute="bottom" id="sL9-7O-DMd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="Seu-fA-Z8r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1Uj-bs-Gx1"/>
+                <constraint firstItem="SIg-lh-AJO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3QF-9J-M0L"/>
+                <constraint firstItem="Seu-fA-Z8r" firstAttribute="top" secondItem="JEL-zZ-GHe" secondAttribute="bottom" constant="20" id="6g2-Jo-QN0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Seu-fA-Z8r" secondAttribute="trailing" constant="16" id="Es1-3I-Mjn"/>
+                <constraint firstItem="xeT-l4-Yi3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="MAe-hN-nsE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xeT-l4-Yi3" secondAttribute="trailing" constant="16" id="N9w-aw-2uN"/>
+                <constraint firstItem="JEL-zZ-GHe" firstAttribute="top" secondItem="xeT-l4-Yi3" secondAttribute="bottom" constant="10" id="WSi-LQ-OTQ"/>
+                <constraint firstItem="xeT-l4-Yi3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="b5w-ho-HCG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JEL-zZ-GHe" secondAttribute="trailing" constant="16" id="g2L-pf-j98"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SIg-lh-AJO" secondAttribute="trailing" constant="16" id="js0-CU-hg1"/>
+                <constraint firstItem="JEL-zZ-GHe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mM5-dl-59O"/>
+                <constraint firstItem="SIg-lh-AJO" firstAttribute="top" secondItem="Seu-fA-Z8r" secondAttribute="bottom" constant="10" id="uUg-b4-xhf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
+        </view>
+    </objects>
+</document>

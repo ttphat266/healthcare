@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditMedicineViewController" customModule="HealthCare" customModuleProvider="target">
+            <connections>
+                <outlet property="quantitySuperView" destination="avh-fK-InO" id="vfb-SH-fqR"/>
+                <outlet property="titteSupperView" destination="5wh-Q5-O10" id="XSG-2p-D3g"/>
+                <outlet property="updateNameTextField" destination="xn7-oA-3dD" id="c5m-Kd-8SU"/>
+                <outlet property="updateQuantityTextField" destination="5YA-hu-pOO" id="QOI-vr-d4T"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Hwr-th-OZv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ1-YI-mKj">
+                    <rect key="frame" x="16" y="114" width="382" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="mGb-pN-zng"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="rn3-Qy-fD1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-Q5-O10">
+                    <rect key="frame" x="16" y="144" width="382" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Medicine Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xn7-oA-3dD">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="xn7-oA-3dD" firstAttribute="top" secondItem="5wh-Q5-O10" secondAttribute="top" id="Asu-aS-QT6"/>
+                        <constraint firstItem="xn7-oA-3dD" firstAttribute="top" secondItem="5wh-Q5-O10" secondAttribute="top" id="P7h-MQ-VMs"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="PC4-fL-Xak"/>
+                        <constraint firstItem="xn7-oA-3dD" firstAttribute="leading" secondItem="5wh-Q5-O10" secondAttribute="leading" id="ZKX-eL-QNU"/>
+                        <constraint firstAttribute="trailing" secondItem="xn7-oA-3dD" secondAttribute="trailing" id="cWw-h1-Ksg"/>
+                        <constraint firstItem="xn7-oA-3dD" firstAttribute="leading" secondItem="5wh-Q5-O10" secondAttribute="leading" id="fyQ-BZ-J6f"/>
+                        <constraint firstAttribute="height" constant="50" id="lhf-BT-isF"/>
+                        <constraint firstAttribute="bottom" secondItem="xn7-oA-3dD" secondAttribute="bottom" id="neb-Mr-7y6"/>
+                        <constraint firstAttribute="trailing" secondItem="xn7-oA-3dD" secondAttribute="trailing" id="zjj-8z-QYW"/>
+                        <constraint firstAttribute="bottom" secondItem="xn7-oA-3dD" secondAttribute="bottom" id="zvp-h1-u6a"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjO-aH-Q5d">
+                    <rect key="frame" x="16" y="214" width="382" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5K2-t3-KG8"/>
+                        <constraint firstAttribute="height" constant="20" id="JG9-rp-5KI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avh-fK-InO">
+                    <rect key="frame" x="16" y="244" width="382" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-hu-pOO">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0Qe-uD-Gve"/>
+                        <constraint firstItem="5YA-hu-pOO" firstAttribute="top" secondItem="avh-fK-InO" secondAttribute="top" id="2kv-xm-uC5"/>
+                        <constraint firstAttribute="trailing" secondItem="5YA-hu-pOO" secondAttribute="trailing" id="9J9-2A-oQL"/>
+                        <constraint firstItem="5YA-hu-pOO" firstAttribute="leading" secondItem="avh-fK-InO" secondAttribute="leading" id="Dxt-hO-tJw"/>
+                        <constraint firstAttribute="bottom" secondItem="5YA-hu-pOO" secondAttribute="bottom" id="NUh-7y-qAe"/>
+                        <constraint firstAttribute="trailing" secondItem="5YA-hu-pOO" secondAttribute="trailing" id="QjL-We-rvf"/>
+                        <constraint firstItem="5YA-hu-pOO" firstAttribute="leading" secondItem="avh-fK-InO" secondAttribute="leading" id="R6t-fv-L0k"/>
+                        <constraint firstAttribute="bottom" secondItem="5YA-hu-pOO" secondAttribute="bottom" id="tKJ-aA-ihU"/>
+                        <constraint firstAttribute="height" constant="50" id="vwT-xQ-GX4"/>
+                        <constraint firstItem="5YA-hu-pOO" firstAttribute="top" secondItem="avh-fK-InO" secondAttribute="top" id="xcO-Hk-heR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="avh-fK-InO" firstAttribute="top" secondItem="pjO-aH-Q5d" secondAttribute="bottom" constant="10" id="0SH-9b-LoA"/>
+                <constraint firstItem="pjO-aH-Q5d" firstAttribute="top" secondItem="5wh-Q5-O10" secondAttribute="bottom" constant="20" id="3Rx-We-goD"/>
+                <constraint firstItem="pjO-aH-Q5d" firstAttribute="top" secondItem="5wh-Q5-O10" secondAttribute="bottom" constant="20" id="8ql-Mb-NJy"/>
+                <constraint firstItem="avh-fK-InO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DDi-Lk-HgL"/>
+                <constraint firstItem="avh-fK-InO" firstAttribute="top" secondItem="pjO-aH-Q5d" secondAttribute="bottom" constant="10" id="FN5-2n-PZ7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hZ1-YI-mKj" secondAttribute="trailing" constant="16" id="Fn7-lz-vC2"/>
+                <constraint firstItem="hZ1-YI-mKj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="KU1-YY-4mL"/>
+                <constraint firstItem="pjO-aH-Q5d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="So4-bc-pmz"/>
+                <constraint firstItem="5wh-Q5-O10" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="bO8-N8-AkP"/>
+                <constraint firstItem="5wh-Q5-O10" firstAttribute="top" secondItem="hZ1-YI-mKj" secondAttribute="bottom" constant="10" id="coE-4T-z36"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="avh-fK-InO" secondAttribute="trailing" constant="16" id="czL-g9-l6O"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5wh-Q5-O10" secondAttribute="trailing" constant="16" id="fsw-UP-XsG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pjO-aH-Q5d" secondAttribute="trailing" constant="16" id="glV-za-lYb"/>
+                <constraint firstItem="5wh-Q5-O10" firstAttribute="top" secondItem="hZ1-YI-mKj" secondAttribute="bottom" constant="10" id="weC-k0-pF7"/>
+                <constraint firstItem="hZ1-YI-mKj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="70" id="xYz-cf-8nU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="120"/>
+        </view>
+    </objects>
+</document>

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+
 class ReminderItem: Object {
     
     @objc dynamic var reminderTittle: String = ""
@@ -26,3 +27,5 @@ class MedicineItem: Object {
     @objc dynamic var medQuantity: Int = 0
     
 }
+
+
